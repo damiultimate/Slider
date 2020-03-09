@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vuyasdiboi</title>
+	<style type="text/css">
+		@keyframes slider1{
+			from{margin-left: 0%;}
+			to{margin-left: -100%;}
+		}
+		@keyframes slider2{
+			from{margin-left: 101%;}
+			to{margin-left: 0%;}
+		}
+		img{
+			width:100%;
+		
+		position: absolute;
+		}
+		.one{
+animation-name: slider1;
+	animation-duration: 1.2s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	animation-delay: 5s;
+	z-index: 2;
+
+		}
+		.two{
+animation-name: slider2;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	z-index: 1;
+	animation-delay: 5s;
+	
+		}
+		
+		.parent{
+			width:70%;
+			height: 500px;
+			position: relative;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+		.child{
+			width:200% ;
+			height:500px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var a = "";
+
+$("body").on("animationend",".one", function(){
+	a = $(".one").attr("src");
+	
+if($(".one").attr("src")=="g7.jpg"){
+	$(".child").html('<img class="one" src="g6.jpg"><img class="two" style="margin-left: 102%;" src="g7.jpg">');
+}else{
+
+	$(".child").html('<img class="one" src="g7.jpg"><img class="two" style="margin-left: 102%;" src="g6.jpg">');
+}
+
+	
+	
+
+
+
+});
+		});
+	</script>
+</head>
+<body>
+	<div class="parent">
+	<div class="child">
+<img class="one" src="g7.jpg">
+<img class="two" style="margin-left: 102%;" src="g6.jpg">
+</div>
+</div>
+</body>
+</html>
